@@ -1,10 +1,10 @@
 import psycopg2
 import streamlit as st
 
-connection = psycopg2.connect(host = st.secrets['psql]['host'], 
-                              user = st.secrets['psql]['user'],
-                              password = st.secrets['psql]['password'],
-                              database = st.secrets['psql]['database'],
+connection = psycopg2.connect(host = st.secrets['psql']['host'], 
+                              user = st.secrets['psql']['user'],
+                              password = st.secrets['psql']['password'],
+                              database = st.secrets['psql']['database'],
                               port = st.secrets['psql']['port'])
                               
 connection.autocommit = True
