@@ -1,8 +1,12 @@
 import psycopg2
-from config import host, user, database, password
 import streamlit as st
 
-connection = psycopg2.connect(host = host, user = user, database = database, password = password)
+connection = psycopg2.connect(host = st.secrets['psql]['host'], 
+                              user = st.secrets['psql]['user'],
+                              password = st.secrets['psql]['password'],
+                              database = st.secrets['psql]['database'],
+                              port = st.secrets['psql']['port'])
+                              
 connection.autocommit = True
 cursor = connection.cursor()
 
